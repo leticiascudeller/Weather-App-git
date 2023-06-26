@@ -1,3 +1,71 @@
-h1{
-    color: blue;
+video{
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+   z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.container{
+    font-family: 'Poppins', sans-serif;
+    padding: 40px 20px;
+    margin: 30px 10px;
+
+}
+.weather-app{
+    background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/874/original/blue-sky-with-clouds-background-elegant_1017-26302.jpg?1686248991) ;
+    background-repeat: no-repeat;
+    border-radius: 20px ;
+}
+
+
+
+.search-icon{
+    size: 120%;
+}
+
+.search-button {
+  position: absolute;
+  left:70px;
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  margin-left: -33px;
+  margin-top:20px;
+}
+
+#search-bar{
+ position: absolute; 
+ left: 70px;
+ width: 330px;
+ height:25px;
+ border-radius:25px;
+ border: none;
+ margin-top:20px;
+ padding: 10px 10px;
+
+
+}
+
+#current-button{
+  position: relative;
+  background-color: deepskyblue;
+  border: 1px #b4e4f5 solid;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: white;
+  outline: none;
+  margin-top:20px;
+  left: 20%;
+  cursor: pointer;
+}
+#current-button:hover{
+color: deepskyblue;
+background-color: white;
+transition: all .4s ease-in-out;
+
 }

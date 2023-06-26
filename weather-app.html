@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://kit.fontawesome.com/3c405c8e68.js" crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   
+    <link rel="stylesheet" href="src/style.css">
+
+    <title>🌦 Weather App</title>
+</head>
+<body>
+
+<div class="container">
+
+<video autoplay loop muted id="background-video">
+<source src="videos/cloudy-sky.mp4" type="video/mp4">
+</video>
+
+<div class="weather-app">
+    
+    <form id="weather-form" class="float-left" >
+        <div class="row">
+          <div class="col-9">
+               <button type="submit" 
+               class="search-button" 
+               id = "search-button">
+               <i class="fa-solid fa-magnifying-glass search-icon" >
+               </i>
+            </button>
+      
+           <input type="text" id="search-bar" 
+            placeholder="Enter a city" 
+            autocomplete="off" 
+            autofocus="on">
+
+          </div>
+
+          <div class="col-3 p-0">
+              <button type="button" id = "current-button">
+                 Current
+                </button>
+          </div>
+        </div>
+    </form>
+
+  
+    <div class="row">
+        <div class="col-6">
+              <div class="date-city-icon">
+              <h1 class="date" id="current-date">Friday, May 12 2023</h1>
+              <h1 class="city">São Paulo</h1>
+              <img src="images/sun.png" alt="sun icon png" class="sun-icon" width="200px">
+              </div>
+        </div>
+
+
+        <div class="col-3">
+            <div class="time-temperature-infomation">
+               <h2 class="time" id ="current-time">12:01</h2>
+                <h2 id="temperature">15</h2>
+                <span class="units">
+                 <a href="#" class= "celsius-icon" id="celsius-icon">
+                       °C
+                 </a>
+                 <span> | </span>
+                 <a href="#" class= "fahrenheit" id="fahrenheit">
+                      °F
+                </a>
+                </span>
+              </div>
+
+               <div class="information">
+                <span class="precipitation">
+                  <i class="fa-solid fa-umbrella"></i>
+                  Precipitation: 0%
+                </span>
+
+              <span class="humidity">
+               <i class="fa-solid fa-droplet"></i>
+               Humidity: 56%
+              </span>
+
+               <span class="wind">
+                <i class="fa-solid fa-wind"></i>
+               Wind: 10 km/h
+               </span>
+            </div>
+            
+        </div>
+   </div>
+
+
+
+
+     <div class="container-cards">
+            <div class="day">
+               <h3 class="day-name">Saturday</h3>
+               <img src="images/" alt="rain cloud png" width="48px">
+                  <div class="day-temp">
+                    <span class="max">27°</span>
+                    <span class="min">/ 15°</span>
+                  </div>
+              </div>
+
+            <div class="day">
+                <h3 class="day-name">Sunday</h3>
+                <img src="images/sun.png" alt="sun png" width="48px">
+                 <div class="day-temp">
+                   <span class="max">28°</span>
+                   <span class="min">/ 15°</span>
+                  </div>
+            </div>
+
+             <div class="day">
+                  <h3 class="day-name">Monday</h3>
+                  <img src="img/cloud.png" alt="white cloud png" width="48px">
+                   <div class="day-temp">
+                    <span class="max">29°</span>
+                    <span class="min">/ 17°</span>
+                   </div>
+            </div>
+
+            <div class="day">
+                 <h3 class="day-name">Tuesday</h3>
+                 <img src="images/sun.png" alt="sun png" width="48px">
+                  <div class="day-temp">
+                    <span class="max">29°</span>
+                    <span class="min">/ 17°</span>
+                  </div>
+             </div>
+
+             <div class="day">
+                 <h3 class="day-name">Wednesday</h3>
+                 <img src="ima/rain.png" alt="rain cloud png" width="48px">
+                  <div class="day-temp">
+                    <span class="max">30°</span>
+                    <span class="min">/ 18°</span>
+                  </div>
+             </div>
+        
+    </div>
+    
+    </div>
+<p><a href="https://github.com/leticiascudeller/Weather-App" target="_blank">Open source code</a> by Letícia Scudeller </p>
+</div>
+    <script src="java-script/weather-app.js"></script>
+</body>
+</html>
