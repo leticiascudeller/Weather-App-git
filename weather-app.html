@@ -33,46 +33,31 @@
 </video>
 
 <div class="weather-app">
-    
-    <form id="weather-form" class="float-left" >
-        <div class="row">
-          <div class="col-9">
-               <button type="submit" 
-               class="search-button" 
-               id = "search-button">
-               <i class="fa-solid fa-magnifying-glass search-icon" >
-               </i>
-            </button>
-      
-           <input type="text" id="search-bar" 
-            placeholder="Enter a city" 
-            autocomplete="off" 
-            autofocus="on">
-
-          </div>
-
-          <div class="col-3 p-0">
-              <button type="button" id = "current-button">
-                 Current
-                </button>
-          </div>
-        </div>
-    </form>
 
   
-    <div class="row weatherInfo">
-        <div class="col-6">
+       <form class="search-tool" id="search-tool">
+       <button type="submit" class="search-button" id = "search-icon"><i class="fa-solid fa-magnifying-glass search-icon" ></i></button>
+      
+        <input type="search" class="search-bar" id = "search-bar" autocapitalize="off"autocomplete="off" placeholder="Enter City">
+        
+       <button type="button" class="current-button" id = "current-button"><i class="fa-solid fa-location-dot"></i></button>
+       </form> 
+       
+
+   
+
+        
+           <div class="weather-info">
               <div class="date-city-icon">
               <h1 class="date" id="current-date">Friday, May 12 2023</h1>
               <h1 class="city">São Paulo</h1>
               <img src="images/sun.png" alt="sun icon png" class="sun-icon" width="200px">
-              </div>
-        </div>
+           </div>
+        
 
-
-        <div class="col-3">
-            <div class="time-temperature-infomation">
-               <h2 class="time" id ="current-time">12:01</h2>
+       
+         <div class="time-temperature-infomation">
+             <h2 class="time" id ="current-time">12:01</h2>
                 <h2 id="temperature">15</h2>
                 <span class="units">
                  <a href="#" class= "celsius-icon" id="celsius-icon">
@@ -83,9 +68,11 @@
                       °F
                 </a>
                 </span>
-              </div>
-
-               <div class="information">
+      
+                       
+                
+            
+             <div class="information">
                 <span class="precipitation">
                   <i class="fa-solid fa-umbrella"></i>
                   Precipitation: 0%
@@ -100,63 +87,60 @@
                 <i class="fa-solid fa-wind"></i>
                Wind: 10 km/h
                </span>
+
             </div>
-            
-        </div>
-   </div>
+         </div>
 
-
-
-
-     <div class="container-cards">
-            <div class="day">
+         
+         
+    <div class="container-cards">
+               <div class="day">
                <h3 class="day-name">Saturday</h3>
-               <img src="images/" alt="rain cloud png" width="48px">
-                  <div class="day-temp">
-                    <span class="max">27°</span>
-                    <span class="min">/ 15°</span>
-                  </div>
-              </div>
+               <img src="images/rain.png" alt="rain cloud png" width="48px">
+                <div class="day-temp">
+                  <span class="max">27°</span>
+                 <span class="min">/ 15°</span>
+                </div>
+           </div>
 
-            <div class="day">
+               <div class="day">
                 <h3 class="day-name">Sunday</h3>
                 <img src="images/sun.png" alt="sun png" width="48px">
-                 <div class="day-temp">
-                   <span class="max">28°</span>
-                   <span class="min">/ 15°</span>
+               <div class="day-temp">
+                <span class="max">28°</span>
+                <span class="min">/ 15°</span>
                   </div>
             </div>
 
-             <div class="day">
-                  <h3 class="day-name">Monday</h3>
-                  <img src="img/cloud.png" alt="white cloud png" width="48px">
-                   <div class="day-temp">
-                    <span class="max">29°</span>
-                    <span class="min">/ 17°</span>
-                   </div>
+                 <div class="day">
+                <h3 class="day-name">Monday</h3>
+                <img src="images/cloud.png" alt="white cloud png" width="48px">
+                <div class="day-temp">
+                <span class="max">29°</span>
+                <span class="min">/ 17°</span>
+                </div>
             </div>
 
-            <div class="day">
-                 <h3 class="day-name">Tuesday</h3>
-                 <img src="images/sun.png" alt="sun png" width="48px">
-                  <div class="day-temp">
-                    <span class="max">29°</span>
-                    <span class="min">/ 17°</span>
-                  </div>
+                <div class="day">
+               <h3 class="day-name">Tuesday</h3>
+               <img src="images/sun.png" alt="sun png" width="48px">
+               <div class="day-temp">
+               <span class="max">29°</span>
+               <span class="min">/ 17°</span>
+                </div>
              </div>
 
-             <div class="day">
+                 <div class="day">
                  <h3 class="day-name">Wednesday</h3>
-                 <img src="ima/rain.png" alt="rain cloud png" width="48px">
-                  <div class="day-temp">
-                    <span class="max">30°</span>
-                    <span class="min">/ 18°</span>
-                  </div>
-             </div>
-        
-    </div>
-    
-    </div>
+                 <img src="images/rain.png" alt="rain cloud png" width="48px">
+                 <div class="day-temp">
+                <span class="max">30°</span>
+                <span class="min">/ 18°</span>
+                 </div>
+        </div>
+              
+  
+ </div>
 <p><a href="https://github.com/leticiascudeller/Weather-App" target="_blank">Open source code</a> by Letícia Scudeller </p>
 </div>
     <script src="java-script/weather-app.js"></script>
