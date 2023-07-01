@@ -202,8 +202,7 @@ a:hover{
 p{
     font-family: monospace;
     font-size: 12px;
+    position: relative;
+    bottom: 585px;
     text-align: center;
-   display: block;
-   margin: 30px auto;
-
 }
