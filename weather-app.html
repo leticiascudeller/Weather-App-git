@@ -28,8 +28,9 @@
 
 <div class="container">
 
-<video autoplay loop muted id="background-video">
-<source src="videos/cloudy-sky.mp4" type="video/mp4">
+<video autoplay loop muted id="weatherVideo">
+<source id="dayVideo" src="videos/cloudy-sky.mp4" type="video/mp4">
+ <source id="nightVideo" src="videos/ night-sky.mp4" type="video/mp4">
 </video>
 
 <div class="weather-app">
@@ -51,7 +52,7 @@
               <div class="date-city-icon">
               <h1 class="date" id="current-date">Friday, May 12 2023</h1>
               <h1 class="city">São Paulo</h1>
-              <img src="images/sun.png" alt="sun icon png" class="sun-icon" width="200px">
+              <img src="images/sun.png" alt="sun icon png" class="sun-icon" id="iconElement" width="200px">
            </div>
         
 
@@ -68,6 +69,10 @@
                       °F
                 </a>
                 </span>
+
+                <p class="description">
+                Clear sky
+                </p>
       
                        
                 
