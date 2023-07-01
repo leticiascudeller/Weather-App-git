@@ -49,6 +49,8 @@ function convertToFahrenheit(event) {
 let fahrenheitDegree = document.querySelector("#fahrenheit");
 fahrenheitDegree.addEventListener("click", convertToFahrenheit);
 
+
+
 function searchCity(event) {
  event.preventDefault();
   let searchInput = document.querySelector("#search-bar");
@@ -82,7 +84,7 @@ document.querySelector(".precipitation").innerHTML = ` Precipitation: ${response
 document.querySelector(".humidity" ).innerHTML = `Humidity: ${response.data.main.humidity}`;
 
 document.querySelector(".wind").innerHTML =  `Wind speed: ${Math.round(response.data.wind.speed)}`;
-
+console.log(response.data.main);
 }
 function userPosition(position) {
   let lat = position.coords.latitude;
