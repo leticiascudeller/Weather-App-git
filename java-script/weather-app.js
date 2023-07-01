@@ -25,10 +25,11 @@ function showDate() {
   let year = now.getFullYear();
   let currentDate = document.querySelector("#current-date");
   currentDate.innerHTML = `${day}, ${month} ${dayMonth} ${year}`;
+  
 }
 
 showDate();
-
+function displayTime(){
 let currentHour = now.getHours();
 let currentMinutes = now.getMinutes();
 let currentTime = document.querySelector("#current-time");
@@ -36,10 +37,27 @@ currentTime.innerHTML = `${currentHour
   .toString()
   .padStart(2, "0")}:${currentMinutes.toString().padStart(2, "0")}`;
 
+let imageElement = document.getElementById("weather-app").style.background - image;
+let videoElement= document.querySelector("weatherVideo");
+let dayVideoElement = document.querySelector("dayVideo");
+let nightVideoElement = document.querySelector("nightVideo");
+
+if (currentHour >= 6 && currentHour < 18) {
+    dayVideoElement.style.display = "block";
+    nightVideoElement.style.display = "none";
+    imageElement.url = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/874/original/blue-sky-with-clouds-background-elegant_1017-26302.jpg?1686248991";
+
+} else {
+  dayVideoElement.style.display = "none";
+  nightVideoElement.style.display = "block";
+  imageElement.url ="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/730/original/night-sky.jpg?1688224903";
+}
+videoElement.play();
+}
+displayTime();
 
 let celsiusDegree = document.querySelector("#celsius-icon");
 celsiusDegree.addEventListener("click", showTemp);
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
