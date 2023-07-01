@@ -13,7 +13,7 @@ video{
 li{
   list-style: none;
   position: relative;
-  bottom: 115px;
+  bottom: 135px;
   left: 165px;
 
 }
@@ -98,7 +98,7 @@ margin-bottom: 15px;
 }
 .time-temperature-infomation{
     background-color: rgba(255, 255, 255, 0.474);
-    color: white;
+    color:#16aadc;
     position: relative;
     bottom: 179px;
     left: 500px;
