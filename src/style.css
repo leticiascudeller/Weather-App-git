@@ -20,13 +20,7 @@ li{
 .container{
 background-size: cover;  
 
-}
-.weather-app{
-    background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/874/original/blue-sky-with-clouds-background-elegant_1017-26302.jpg?1686248991) ;
-    background-repeat: no-repeat;
-    border-radius: 20px ;
-}
-   
+} 
 .weather-app{
 background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/874/original/blue-sky-with-clouds-background-elegant_1017-26302.jpg?1686248991) ;
   background-repeat: no-repeat;
@@ -139,10 +133,14 @@ a:hover{
     margin: 38px 25px;
     bottom:40px;
 }
-
-
-
-    
+.description{
+  color:#16aadc;
+  font-size: 16px;
+  position: relative;
+  bottom: 50px;
+  left: 40px;
+  
+}
 
 .container-cards{
   display: flex;
@@ -156,9 +154,6 @@ a:hover{
   
   
 }
-
-
-
 .day {
  
   border-radius: 5px;
