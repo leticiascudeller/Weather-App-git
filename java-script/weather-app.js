@@ -75,10 +75,14 @@ function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = temperature;
-  console.log(response.data.main);
+  console.log(response.data.weather[0]);
   // Weather Description
   let descriptionElement = document.querySelector("#weather-description");
    descriptionElement.innerHTML = response.data.weather[0].description.toUpperCase();
+  // Weather icon 
+  let iconElement = document.querySelector("#iconElement");
+   iconElement.setAttribute("src",`images/${response.data.weather[0].icon}.png`);
+   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   // change the city value by user's current position
   let userCity = response.data.name;
