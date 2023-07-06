@@ -37,22 +37,6 @@ currentTime.innerHTML = `${currentHour
   .toString()
   .padStart(2, "0")}:${currentMinutes.toString().padStart(2, "0")}`;
 
-let imageElement = document.getElementById("weather-app").style.background - image;
-let videoElement= document.querySelector("weatherVideo");
-let dayVideoElement = document.querySelector("dayVideo");
-let nightVideoElement = document.querySelector("nightVideo");
-
-if (currentHour >= 6 && currentHour < 18) {
-    dayVideoElement.style.display = "block";
-    nightVideoElement.style.display = "none";
-    imageElement.url = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/874/original/blue-sky-with-clouds-background-elegant_1017-26302.jpg?1686248991";
-
-} else {
-  dayVideoElement.style.display = "none";
-  nightVideoElement.style.display = "block";
-  imageElement.url ="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/730/original/night-sky.jpg?1688224903";
-}
-videoElement.play();
 }
 displayTime();
 
@@ -91,6 +75,10 @@ function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = temperature;
+  console.log(response.data.main);
+  // Weather Description
+  let descriptionElement = document.querySelector("#weather-description");
+   descriptionElement.innerHTML = response.data.weather[0].description.toUpperCase();
 
   // change the city value by user's current position
   let userCity = response.data.name;
@@ -102,7 +90,7 @@ document.querySelector(".precipitation").innerHTML = ` Precipitation: ${response
 document.querySelector(".humidity" ).innerHTML = `Humidity: ${response.data.main.humidity}`;
 
 document.querySelector(".wind").innerHTML =  `Wind speed: ${Math.round(response.data.wind.speed)}`;
-console.log(response.data.main);
+
 }
 function userPosition(position) {
   let lat = position.coords.latitude;
