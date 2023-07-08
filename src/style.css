@@ -119,13 +119,14 @@ margin-bottom: 15px;
 }
 .celsius-icon, .fahrenheit{
   font-weight: lighter;
-  text-decoration: none;
   color:#006eff;
+  text-decoration:none ;
 }
 
 a:hover{
   color: white;
   cursor: pointer;
+  text-decoration:underline;
   
 }
 .information{
