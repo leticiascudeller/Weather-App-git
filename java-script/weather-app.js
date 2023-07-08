@@ -104,11 +104,14 @@ function showTemp(response) {
   let city = document.querySelector(".city");
   city.innerHTML = userCity;
 
-document.querySelector(".precipitation").innerHTML = ` Precipitation: ${response.data.main.precipitation}`;
+document.querySelector(
+  "#feelsLike-value"
+).innerHTML = `${Math.round(response.data.main.feels_like)} °C`;
   
-document.querySelector(".humidity" ).innerHTML = `Humidity: ${response.data.main.humidity}`;
+document.querySelector("#humidity-value" ).innerHTML = `${response.data.main.humidity}%`;
 
-document.querySelector(".wind").innerHTML =  `Wind speed: ${Math.round(response.data.wind.speed)}`;
+document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+console.log(response.data);
 }
 
 
