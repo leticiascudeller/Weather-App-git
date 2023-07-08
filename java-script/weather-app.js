@@ -52,12 +52,21 @@ displayTime();
 function convertToCelsius(event){
  let temperature = document.querySelector("#temperature");
  temperature.innerHTML = Math.round(celsiusTemp);
+  let celsiusDegree = document.querySelector("#celsius-icon");
+  let fahrenheitDegree = document.querySelector("#fahrenheit");
+  celsiusDegree.style.color = "#006eff";
+  fahrenheitDegree.style.color = "white";
+
 }
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
   let fahreinheitTemp = (celsiusTemp * 9) / 5 +32;
   temperature.innerHTML = Math.round(fahreinheitTemp);
+  let celsiusDegree = document.querySelector("#celsius-icon");
+  let fahrenheitDegree = document.querySelector("#fahrenheit");
+  celsiusDegree.style.color = "white";
+  fahrenheitDegree.style.color = "#006eff";
 }
 let celsiusTemp = null;
 let fahrenheitDegree = document.querySelector("#fahrenheit");
@@ -104,9 +113,7 @@ function showTemp(response) {
   let city = document.querySelector(".city");
   city.innerHTML = userCity;
 
-document.querySelector(
-  "#feelsLike-value"
-).innerHTML = `${Math.round(response.data.main.feels_like)} °C`;
+document.querySelector( "#feelsLike-value").innerHTML = `${Math.round(response.data.main.feels_like)} °C`;
   
 document.querySelector("#humidity-value" ).innerHTML = `${response.data.main.humidity}%`;
 
