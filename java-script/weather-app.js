@@ -37,19 +37,34 @@ currentTime.innerHTML = `${currentHour
   .toString()
   .padStart(2, "0")}:${currentMinutes.toString().padStart(2, "0")}`;
 
+let weatherImage = document.querySelector(".weather-app");
+let nightTimeImg = `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/730/original/night-sky.jpg?1688224903`;
+let dayTimeImg = `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/874/original/blue-sky-with-clouds-background-elegant_1017-26302.jpg?1686248991`;
+
+if (currentHour > 18){
+weatherImage.style.backgroundImage = `url(${nightTimeImg})`;
+} else{
+ weatherImage.style.backgroundImage = `url(${dayTimeImg})`;
+}
 }
 displayTime();
 
-let celsiusDegree = document.querySelector("#celsius-icon");
-celsiusDegree.addEventListener("click", showTemp);
+function convertToCelsius(event){
+ let temperature = document.querySelector("#temperature");
+ temperature.innerHTML = Math.round(celsiusTemp);
+}
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = 79;
+  let fahreinheitTemp = (celsiusTemp * 9) / 5 +32;
+  temperature.innerHTML = Math.round(fahreinheitTemp);
 }
-
+let celsiusTemp = null;
 let fahrenheitDegree = document.querySelector("#fahrenheit");
 fahrenheitDegree.addEventListener("click", convertToFahrenheit);
+
+let celsiusDegree = document.querySelector("#celsius-icon");
+celsiusDegree.addEventListener("click", convertToCelsius);
 
 
 
@@ -75,7 +90,7 @@ function showTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = temperature;
-  console.log(response.data.weather[0]);
+  celsiusTemp = temperature;
   // Weather Description
   let descriptionElement = document.querySelector("#weather-description");
    descriptionElement.innerHTML = response.data.weather[0].description.toUpperCase();
@@ -94,8 +109,9 @@ document.querySelector(".precipitation").innerHTML = ` Precipitation: ${response
 document.querySelector(".humidity" ).innerHTML = `Humidity: ${response.data.main.humidity}`;
 
 document.querySelector(".wind").innerHTML =  `Wind speed: ${Math.round(response.data.wind.speed)}`;
-
 }
+
+
 function userPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
