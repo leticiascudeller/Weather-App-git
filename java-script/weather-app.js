@@ -1,4 +1,4 @@
-//feature #1 In your project, display the current date and time using JavaScript: Tuesday 16:00
+//feature #1 In your project, display the current date and time using JavaScript
 
 let now = new Date();
 
@@ -29,6 +29,7 @@ function showDate() {
 }
 
 showDate();
+
 function displayTime(){
 let currentHour = now.getHours();
 let currentMinutes = now.getMinutes();
@@ -49,6 +50,42 @@ weatherImage.style.backgroundImage = `url(${nightTimeImg})`;
 }
 displayTime();
 
+// display Forecast cards
+function displayForecast(){
+let forecastElement = document.querySelector("#forecast");
+let forecastHTML = "";
+let days = ["Monday" , "Tueday" , "Wednesay" , "Thursday"];
+days.forEach(function(day){
+forecastHTML =
+  forecastHTML +
+  `
+<div class="day">
+     <h3 class="day-name">${day}</h3>
+     <img src="images/01d.png" alt="rain cloud png" width="48px">
+        <div class="day-temp">
+        <span class="max">27°</span>
+         <span class="min">/ 15°</span>
+        </div>
+</div>
+`;
+forecastElement.innerHTML = forecastHTML;
+})
+
+}
+displayForecast();
+// display Forecast cards end
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let key = `55e5c5f20e3695ee397f56f0d66ac390`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+// Unit Conversion
 function convertToCelsius(event){
  let temperature = document.querySelector("#temperature");
  temperature.innerHTML = Math.round(celsiusTemp);
@@ -74,17 +111,21 @@ fahrenheitDegree.addEventListener("click", convertToFahrenheit);
 
 let celsiusDegree = document.querySelector("#celsius-icon");
 celsiusDegree.addEventListener("click", convertToCelsius);
+// Unit conversion end
 
 
 
+// call API when we use the search form
 function searchCity(event) {
  event.preventDefault();
   let searchInput = document.querySelector("#search-bar");
   let city = searchInput.value;
-  let key = `894a2e7aa7f46eeca5d8778f6faa5a5b`;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   let cityInput = document.querySelector(".city");
   cityInput.innerHTML = city;
+
+  let key = `894a2e7aa7f46eeca5d8778f6faa5a5b`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+  
   axios.get(url).then(showTemp);
 
 }
@@ -92,8 +133,10 @@ function searchCity(event) {
 let searchForm = document.querySelector("#search-tool");
 searchForm.addEventListener("click", searchCity);
 
-// Week 5: Current Location button
 
+
+
+// display Temperature
 function showTemp(response) {
   // change temperature value
   let temperature = Math.round(response.data.main.temp);
@@ -118,10 +161,11 @@ document.querySelector( "#feelsLike-value").innerHTML = `${Math.round(response.d
 document.querySelector("#humidity-value" ).innerHTML = `${response.data.main.humidity}%`;
 
 document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
-console.log(response.data);
+
+getForecast(response.data.coord);
 }
-
-
+// CURRENT BUTTON
+// define user's latitude and longitude for 'current location" button
 function userPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -131,10 +175,11 @@ function userPosition(position) {
 
   axios.get(apiUrl).then(showTemp);
 }
-
+// call for the current Location
 function currentLocation() {
   navigator.geolocation.getCurrentPosition(userPosition);
 }
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentLocation);
+// CURRENT BUTTON end
