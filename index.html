@@ -25,12 +25,12 @@
     <title>🌦 Weather App</title>
 </head>
 <body>
-
-<div class="container">
-
 <video autoplay loop muted id="weatherVideo">
 <source id="dayVideo" src="videos/cloudy-sky.mp4" type="video/mp4">
 </video>
+<div class="container">
+
+
 
 <div class="weather-app">
 
@@ -52,6 +52,7 @@
               <h1 class="date" id="current-date">Friday, May 12 2023</h1>
               <h1 class="city">São Paulo</h1>
               <img src="images/01d.png" alt="sun icon png" class="sun-icon" id="iconElement" width="200px">
+             </div>
            </div>
         
 
@@ -101,7 +102,7 @@
 
          
          
-    <div class="container-cards">
+    <div class="container-cards" id="forecast">
                <div class="day">
                <h3 class="day-name">Saturday</h3>
                <img src="images/01d.png" alt="rain cloud png" width="48px">
@@ -114,42 +115,49 @@
                <div class="day">
                 <h3 class="day-name">Sunday</h3>
                 <img src="images/02d.png" alt="sun png" width="48px">
-               <div class="day-temp">
-                <span class="max">28°</span>
-                <span class="min">/ 15°</span>
-                  </div>
+                 <div class="day-temp">
+                  <span class="max">28°</span>
+                  <span class="min">/ 15°</span>
+                </div>
             </div>
 
                  <div class="day">
                 <h3 class="day-name">Monday</h3>
                 <img src="images/01d.png" alt="white cloud png" width="48px">
-                <div class="day-temp">
-                <span class="max">29°</span>
-                <span class="min">/ 17°</span>
-                </div>
+                   <div class="day-temp">
+                    <span class="max">29°</span>
+                    <span class="min">/ 17°</span>
+                   </div>
             </div>
 
                 <div class="day">
                <h3 class="day-name">Tuesday</h3>
                <img src="images/03d.png" alt="sun png" width="48px">
-               <div class="day-temp">
-               <span class="max">29°</span>
-               <span class="min">/ 17°</span>
+                  <div class="day-temp">
+                  <span class="max">29°</span>
+                  <span class="min">/ 17°</span>
                 </div>
              </div>
 
                  <div class="day">
                  <h3 class="day-name">Wednesday</h3>
                  <img src="images/11d.png" alt="rain cloud png" width="48px">
-                 <div class="day-temp">
-                <span class="max">30°</span>
-                <span class="min">/ 18°</span>
+                   <div class="day-temp">
+                   <span class="max">30°</span>
+                   <span class="min">/ 18°</span>
                  </div>
-        </div>
-              
- </div>
-<p><a href="https://github.com/leticiascudeller/Weather-App" target="_blank">Open source code</a> by Letícia Scudeller </p>
+               </div>
+
+    </div>
+
+
+
+    
+    <p><a href="https://github.com/leticiascudeller/Weather-App" target="_blank">Open source code</a> by Letícia Scudeller</p>
+   </div>
 </div>
+
+
     <script src="java-script/weather-app.js"></script>
 </body>
 </html>

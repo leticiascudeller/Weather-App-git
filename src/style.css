@@ -5,9 +5,7 @@ video{
    z-index: -100;
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
-    right: 0;
 }
 
 li{
@@ -28,7 +26,7 @@ background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/fil
    border-radius: 15px;
    font-family: 'Poppins', sans-serif;
    padding: 40px 20px;
-   margin: 30px 10px;
+   margin: 10px 10px 10px 10px;
 
 }
 
@@ -198,7 +196,5 @@ a:hover{
 p{
     font-family: monospace;
     font-size: 12px;
-    position: relative;
-    bottom: 20px;
     text-align: center;
 }
