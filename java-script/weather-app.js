@@ -1,5 +1,4 @@
 //feature #1 In your project, display the current date and time using JavaScript
-
 let now = new Date();
 
 function showDate() {
@@ -99,8 +98,9 @@ function getForecast(coordinates) {
   console.log(coordinates);
   let lat = coordinates.lat;
   let lon = coordinates.lon;
+  let unit = prompt("Enter imperial for °F and metric for °C");
   let key = `f3009e4852fa0a079dab291dabf020c4`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=${unit.toLowerCase()}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -142,7 +142,6 @@ function searchCity(event) {
   let city = searchInput.value;
   let cityInput = document.querySelector(".city");
   cityInput.innerHTML = city;
-
   let key = `894a2e7aa7f46eeca5d8778f6faa5a5b`;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   
@@ -176,11 +175,11 @@ function showTemp(response) {
   let city = document.querySelector(".city");
   city.innerHTML = userCity;
 
-document.querySelector( "#feelsLike-value").innerHTML = `${Math.round(response.data.main.feels_like)} °C`;
+document.querySelector( "#feelsLike-value").innerHTML = `${Math.round(response.data.main.feels_like)}`;
   
-document.querySelector("#humidity-value" ).innerHTML = `${response.data.main.humidity}%`;
+document.querySelector("#humidity-value" ).innerHTML = `${response.data.main.humidity}`;
 
-document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed)}`;
 
 getForecast(response.data.coord);
 }
