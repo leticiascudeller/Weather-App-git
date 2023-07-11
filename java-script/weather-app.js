@@ -102,11 +102,6 @@ function getForecast(coordinates) {
   let lon = coordinates.lon;
   let unit = prompt("Enter imperial for °F and metric for °C");
  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=${unit.toLowerCase()}`;
-  if (unit = ""){
- let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
- axios.get(apiUrl).then(displayForecast);
-  } 
-
   axios.get(apiUrl).then(displayForecast);
 }
 
