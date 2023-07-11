@@ -75,19 +75,21 @@ let forecastHTML = "";
 
 forecast.forEach(function(forecastDay, index){
 if (index < 5) {
-forecastHTML =
-  forecastHTML +
-  `
+  forecastHTML =
+    forecastHTML +
+    `
 <div class="day">
      <h3 class="day-name">${formatDay(forecastDay.dt)}</h3>
-     <img src="images/${forecastDay.weather[0].icon}.png" alt="${forecastDay.weather[0].description}" width="48px">
+     <img src="images/${forecastDay.weather[0].icon}.png" alt="${
+      forecastDay.weather[0].description
+    }" width="48px">
         <div class="day-temp">
         <span class="max">${Math.round(forecastDay.temp.max)}°</span>
         <span class="min">/ ${Math.round(forecastDay.temp.min)}°</span>
         </div>
 </div>
 `;
-forecastElement.innerHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
 }
 })
 }
@@ -95,13 +97,16 @@ forecastElement.innerHTML = forecastHTML;
 
 // fetch city coordinates for the forecast cards
 function getForecast(coordinates) {
-  console.log(coordinates);
+  let key = `f3009e4852fa0a079dab291dabf020c4`;
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let unit = prompt("Enter imperial for °F and metric for °C");
-  let key = `f3009e4852fa0a079dab291dabf020c4`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=${unit.toLowerCase()}`;
-  console.log(apiUrl);
+ let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=${unit.toLowerCase()}`;
+  if (unit = ""){
+ let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}&units=metric`;
+ axios.get(apiUrl).then(displayForecast);
+  } 
+
   axios.get(apiUrl).then(displayForecast);
 }
 
