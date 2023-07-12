@@ -40,11 +40,14 @@ currentTime.innerHTML = `${currentHour
 let weatherImage = document.querySelector(".weather-app");
 let nightTimeImg = `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/087/730/original/night-sky.jpg?1688224903`;
 let dayTimeImg = `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/874/original/blue-sky-with-clouds-background-elegant_1017-26302.jpg?1686248991`;
+let weatherVideo = document.querySelector("#weatherVideo");
 
 if (currentHour > 18){
 weatherImage.style.backgroundImage = `url(${nightTimeImg})`;
+weatherVideo.src = `videos/night-sky.mp4`;
 } else{
  weatherImage.style.backgroundImage = `url(${dayTimeImg})`;
+ weatherVideo.src = `videos/cloudy-sky.mp4`;
 }
 }
 displayTime();
